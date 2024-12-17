@@ -39,11 +39,12 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ttsa-web:latest
 
       - name: Deploy to DigitalOcean Droplet
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.DROPLET_IP }}
-          username: ${{ secrets.DROPLET_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.DIGITALOCEAN_DROPLET_IP }}
+          username: ${{ secrets.DIGITALOCEAN_DROPLET_USERNAME }}
+          password: ${{ secrets.DIGITALOCEAN_DROPLET_PASSWORD }}
+          debug: true
           script: |
             # Pull the latest image
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/ttsa-web:latest
