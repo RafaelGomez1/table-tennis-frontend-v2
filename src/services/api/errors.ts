@@ -24,7 +24,7 @@ export class ApiError extends Error {
       case 404:
         return 'Recurso no encontrado.';
       case 429:
-        return 'Demasiadas peticiones. Por favor, inténtalo más tarde.';
+        return 'Demasiadas peticiones. Por favor, inténtalo en un rato.';
       case 500:
         return 'Error del servidor. Por favor, inténtalo más tarde.';
       default:
