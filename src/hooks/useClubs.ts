@@ -21,7 +21,7 @@ export function useClubs(leagueId: LeagueId | null) {
         setClubs(data);
       } catch (err) {
         console.error('Error fetching clubs:', err);
-        setError('Failed to load clubs. Please try again later.');
+        setError('Ha habido un error al cargar los equipos.');
         setClubs([]);
       } finally {
         setLoading(false);
